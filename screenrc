@@ -1,0 +1,16 @@
+#resize
+escape ^Z^Z
+
+startup_message off
+
+shell -/bin/bash
+
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind ^r eval 'command -c resize'
+bind + eval 'command -c resize'
+bind - eval 'command -c resize'
+bind -c resize + eval 'resize +1' 'command -c resize'
+bind -c resize - eval 'resize -1' 'command -c resize'
+
+# 最終行にウィンドウ一覧を表示
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
